@@ -1,10 +1,15 @@
 <template>
-<div>labeis.vue</div>
+  <div>
+    labeis.vue
+    <Nav/>
+  </div>
 </template>
 
 <script>
+
 export default {
-name: "Labeis"
+  name: 'Labeis',
+
 }
 </script>
 

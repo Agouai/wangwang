@@ -1,13 +1,7 @@
 <template>
   <div>
     <router-view/>
-    <hr/>
-    <router-link to="/money">记账</router-link>
-    |
-    <router-link to="/statistics">统计</router-link>
-    |
-    <router-link to="/labeis">标签</router-link>
-  </div>
+   </div>
 </template>
 
 <style lang="scss">
