@@ -1,8 +1,7 @@
 <template>
-  <div>
-    labeis.vue
-    <Nav/>
-  </div>
+  <Layout>
+    <p>labeis.vue</p>
+  </Layout>
 </template>
 
 <script>
@@ -12,7 +11,3 @@ export default {
 
 }
 </script>
-
-<style scoped>
-
-</style>

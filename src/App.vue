@@ -1,14 +1,23 @@
 <template>
   <div>
     <router-view/>
-   </div>
+  </div>
 </template>
 
 <style lang="scss">
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 #app {
