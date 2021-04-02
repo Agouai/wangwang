@@ -59,6 +59,9 @@ export default class NumberPad extends Vue {
   clear() {
     this.output = '0';
   }
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  ok() {}
 }
 </script>
 
