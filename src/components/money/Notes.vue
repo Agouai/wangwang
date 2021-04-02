@@ -1,6 +1,7 @@
 <template>
   <div>
     <label class="notes">
+      {{value}}
       <span class="name">备注</span>
       <input type="text" :value="value"
              @input="onInput"
