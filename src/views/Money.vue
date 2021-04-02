@@ -9,10 +9,10 @@
 
 
 <script lang="ts">
-import NumberPad from '@/views/money/numberPad'
-import Tags from '@/views/money/tags'
-import Types from '@/views/money/types'
-import Notes from '@/views/money/notes'
+import NumberPad from '@/components/money/numberPad.vue'
+import Tags from '@/components/money/tags.vue'
+import Types from '@/components/money/types.vue'
+import Notes from '@/components/money/notes.vue'
 
 export default {
   name: 'Money',
