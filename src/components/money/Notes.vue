@@ -1,11 +1,15 @@
 <template>
   <div>
     <label class="notes">
-      {{value}}
+      {{ value }}
       <span class="name">备注</span>
-      <input type="text" :value="value"
-             @input="onInput"
+      <input type="text"
+             v-model="value"
              placeholder="在这里输入文字">
+      <!--      <input type="text" :value="value"-->
+      <!--             @input="onInput"-->
+      <!--             placeholder="">-->
+      <!--      上述代码可以被v-model 简写-->
     </label>
   </div>
 </template>
@@ -17,11 +21,11 @@ import {Component} from 'vue-property-decorator';
 @Component
 export default class Notes extends Vue {
   value = '';
-
-  onInput(event: KeyboardEvent) {
-    const input = event.target as HTMLInputElement;
-    this.value = input.value;
-  }
+  // value = '';
+  // onInput(event: KeyboardEvent) {
+  //   const input = event.target as HTMLInputElement;
+  //   this.value = input.value;
+  // }
 }
 // export default {
 // name: "notes"
