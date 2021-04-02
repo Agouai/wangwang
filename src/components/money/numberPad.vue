@@ -1,6 +1,6 @@
 <template>
   <div class="numberPad">
-    <div class="output">100</div>
+    <div class="output">0</div>
     <div class="buttons">
       <button>1</button>
       <button>2</button>
