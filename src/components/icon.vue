@@ -1,13 +1,13 @@
 <template>
   <svg class="icon">
-    <use v-bind:xlink:herf="'#'+name"/>
+    <use v-bind:xlink:href="'#'+name"/>
   </svg>
 </template>
 
 <script lang="ts">
 
-let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);//这里的错位我用了alt+shift+enter来取消，但是还是有问题
-try {importAll(require.context('../assets/icon', true, /\svg$/));} catch (error) {console.log(error);}
+const importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);//这里的错位我用了alt+shift+enter来取消，但是还是有问题
+try {importAll(require.context('../assets/icon', true, /\.svg$/));} catch (error) {console.log(error);}
 export default {
   props: ['name'],
   name: 'icon'
