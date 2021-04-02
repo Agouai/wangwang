@@ -19,22 +19,22 @@ import {Component, Prop} from 'vue-property-decorator';
 export default class Types extends Vue {
   type = '-';//'-'表示支出，'+'表示收入
 
-  @Prop(Number) xxx: number | undefined;
-
   selectType(type: string) {
     if (type !== '-' && type !== '+') {
       throw new Error('type is unknow');
     }
     this.type = type;
   }
-  mounted(){
-    if(this.xxx===undefined){
-      console.log('xxx的类型不对');
-    }else {
-      console.log(this.xxx.toString());
-    }
-  }
 }
+//  @Prop(Number) xxx: number | undefined;
+//   mounted() {
+//     if (this.xxx === undefined) {
+//       console.log('xxx的类型不对');
+//     } else {
+//       console.log(this.xxx.toString());
+//     }
+//   }
+// }
 // export default {
 //   name: 'types',
 //   props:['xxx'],
