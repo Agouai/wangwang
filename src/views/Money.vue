@@ -1,18 +1,18 @@
 <template>
   <Layout class-prefix="layout">
-    <number-pad/>
-    <types xxx="'hi'"/>
-    <notes/>
-    <tags/>
+    <NumberPad/>
+    <Types :xxx='34'/>
+    <Notes/>
+    <Tags/>
   </Layout>
 </template>
 
 
 <script lang="ts">
-import NumberPad from '@/components/money/numberPad.vue';
-import Tags from '@/components/money/tags.vue';
-import Types from '@/components/money/types.vue';
-import Notes from '@/components/money/notes.vue';
+import NumberPad from '@/components/money/NumberPad.vue';
+import Tags from '@/components/money/Tags.vue';
+import Types from '@/components/money/Types.vue';
+import Notes from '@/components/money/Notes.vue';
 
 export default {
   name: 'Money',
