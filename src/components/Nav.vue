@@ -23,9 +23,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/assets/style/helper.scss";
+
 nav {
+  @extend %outterShadow;
   display: flex;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
   flex-direction: row;
 }
 
@@ -37,7 +38,8 @@ nav > .item {
   align-items: center;
   flex-direction: column;
 }
-.icon{
+
+.icon {
   width: 32px;
   height: 32px;
 }
