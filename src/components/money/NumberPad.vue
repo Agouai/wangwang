@@ -24,7 +24,7 @@
 // export default {
 //   name: 'numberPad'}
 import Vue from 'vue';
-import {Component, Prop} from 'vue-property-decorator';
+import {Component, Prop, Watch} from 'vue-property-decorator';
 
 @Component
 export default class NumberPad extends Vue {
@@ -42,9 +42,7 @@ export default class NumberPad extends Vue {
       }
       return;
     }
-    if (this.output.indexOf('.') >= 0) {
-      if (input === '.') {return;}
-    }
+    if (this.output.indexOf('.') >= 0 &&input==='.')
     this.output += input;
   }
 
@@ -61,7 +59,9 @@ export default class NumberPad extends Vue {
   }
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  ok() {}
+  ok() {
+    this.$emit('update:value', this.output);
+  }
 }
 </script>
 
