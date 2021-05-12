@@ -25,7 +25,7 @@ if (version === '0.0.1') {
     record.createdAT = new Date(2021, 5, 12);
   });
   //保存数据
-  window.localStorage.setItem('recordList', JSON.stringify(this.recordList));
+  window.localStorage.setItem('recordList', JSON.stringify(recordList));
 }
 window.localStorage.setItem('version', '0.0.2');
 
