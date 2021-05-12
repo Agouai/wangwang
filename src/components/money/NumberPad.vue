@@ -32,7 +32,7 @@ export default class NumberPad extends Vue {
 
   inputContent(event: MouseEvent) {
     const button = (event.target as HTMLButtonElement);//强制指定类型
-    const input = button.textContent!;
+    const input = button.textContent!;//感叹号就是排除空
     if (this.output.length === 16) {return;}
     if (this.output === '0') {
       if ('0123456789'.indexOf(input) >= 0) {
@@ -42,7 +42,7 @@ export default class NumberPad extends Vue {
       }
       return;
     }
-    if (this.output.indexOf('.') >= 0 &&input==='.')
+    if (this.output.indexOf('.') >= 0 &&input==='.'){return;}
     this.output += input;
   }
 
