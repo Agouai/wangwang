@@ -19,15 +19,16 @@ import {Component, Watch} from 'vue-property-decorator';
 
 const version = window.localStorage.getItem('version') || '0';
 const recordList: Record[] = JSON.parse(window.localStorage.getItem('recordList') || '[]');
-if (version === '0.0.1') {
-  //数据库升级，数据迁移
-  recordList.forEach(record => {
-    record.createdAT = new Date(2021, 5, 12);
-  });
-  //保存数据
-  window.localStorage.setItem('recordList', JSON.stringify(recordList));
-}
-window.localStorage.setItem('version', '0.0.2');
+//版本变更
+// if (version === '0.0.1') {
+//   //数据库升级，数据迁移
+//   recordList.forEach(record => {
+//     record.createdAT = new Date(2021, 5, 12);
+//   });
+//   //保存数据
+//   window.localStorage.setItem('recordList', JSON.stringify(recordList));
+// }
+// window.localStorage.setItem('version', '0.0.2');
 
 type Record = {
   tags: string[];
