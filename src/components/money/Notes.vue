@@ -8,7 +8,7 @@
       <!--      <input type="text" :value="value"-->
       <!--             @input="onInput"-->
       <!--             placeholder="">-->
-      <!--      上述代码可以被v-model 简写-->
+      <!--      上述代码可以被v-recordListModel.ts 简写-->
     </label>
   </div>
 </template>

@@ -1,6 +1,5 @@
 <template>
   <Layout class-prefix="layout">
-    {{ recordList }}
     <NumberPad @update:value="onUpdateAmount" @submit="saveRecord"/>
     <Types :value.sync="record.type"/>
     <Notes @update:value="onUpdateNotes"/>
@@ -16,12 +15,13 @@ import Tags from '@/components/money/Tags.vue';
 import Types from '@/components/money/Types.vue';
 import Notes from '@/components/money/Notes.vue';
 import {Component, Watch} from 'vue-property-decorator';
-import model from '@/model.ts';
+import recordListModel from '@/models/recordListModel';
+import tagListModel from '@/models/tagListModel';
 
 //TS引入JS
-//import model  from '@/model.ts'
-// const model=require('@/model.js').model;
-// const recordList:RecordItem[]=model.fetch();
+//import recordListModel.ts  from '@/recordListModel.ts.ts'
+// const recordListModel.ts=require('@/recordListModel.ts.js').recordListModel.ts;
+// const recordList:RecordItem[]=recordListModel.ts.fetch();
 
 //版本变更
 // const version = window.localStorage.getItem('version') || '0';
@@ -35,13 +35,14 @@ import model from '@/model.ts';
 //   window.localStorage.setItem('recordList', JSON.stringify(recordList));
 // }
 // window.localStorage.setItem('version', '0.0.2');
-const recordList: RecordItem[] = model.fetch();
+const recordList: RecordItem[] = recordListModel.fetch();
+const tagList=tagListModel.fetch();
 
 @Component({
   components: {Tags, Notes, Types, NumberPad},
 })
 export default class Money extends Vue {
-  tags = ['衣', '食', '住', '行'];
+  tags = tagList;
   recordList: RecordItem[] = recordList;
   record: RecordItem = {
     tags: [], notes: '', type: '-', amount: 0,
@@ -60,15 +61,15 @@ export default class Money extends Vue {
   }
 
   saveRecord() {
-    const record2: RecordItem = model.clone(this.record);
+    const record2: RecordItem = recordListModel.clone(this.record);
     record2.createdAT = new Date();
     this.recordList.push(record2);
     console.log(this.recordList);
   }
 
-  @Watch('recordList')
+  @Watch('recordListModel')
   onRecordListChange() {
-    model.save(this.recordList);
+    recordListModel.save(this.recordList);
   }
 }
 </script>
