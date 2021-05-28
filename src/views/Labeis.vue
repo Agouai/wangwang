@@ -1,11 +1,13 @@
 <template>
   <Layout>
-    <ol class="tags">
-      <li v-for="tag in tags" :key="tag.id">
-        <ol>{{ tag.name }}</ol>
+    <div   class="tags">
+      <router-link class="tag"
+                    v-for="tag in tags" :key="tag.id"
+                   :to="`/labeis/edit/${tag.id}`">
+        <span>{{ tag.name }}</span>
         <icon name="right"/>
-      </li>
-    </ol>
+      </router-link>
+    </div>
     <div class="newTag-wrapper">
       <button class="newTag" @click="newtag">新建标签</button>
     </div>
@@ -44,7 +46,7 @@ export default class Labeis extends Vue {
   font-size: 20px;
   padding-left: 16px;
 
-  > li {
+  > .tag {
     min-height: 44px;
     display: flex;
     align-items: center;
