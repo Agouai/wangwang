@@ -30,7 +30,7 @@ const routes = [
 		component: NotFound
 	},
 	{
-		path: '/labeis/edit',
+		path: '/labeis/edit/:id',
 		component: EditLabel
 	},
 ];
