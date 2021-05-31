@@ -1,6 +1,5 @@
 <template>
   <Layout class-prefix="layout">
-    {{record}}
     <NumberPad @update:value="onUpdateAmount" @submit="saveRecord"/>
     <Types :value.sync="record.type"/>
     <div class="notes">
@@ -19,7 +18,7 @@ import NumberPad from '@/components/money/NumberPad.vue';
 import Tags from '@/components/money/Tags.vue';
 import Types from '@/components/money/Types.vue';
 import FormItem from '@/components/money/FormItem.vue';
-import {Component, Watch} from 'vue-property-decorator';
+import {Component, Prop, Watch} from 'vue-property-decorator';
 import recordListModel from '@/models/recordListModel';
 import tagListModel from '@/models/tagListModel';
 
@@ -84,7 +83,8 @@ export default class Money extends Vue {
   display: flex;
   flex-direction: column-reverse;
 }
-.notes{
+
+.notes {
   padding: 12px 0;
 }
 </style>
