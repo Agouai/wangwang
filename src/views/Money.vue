@@ -2,7 +2,9 @@
   <Layout class-prefix="layout">
     <NumberPad @update:value="onUpdateAmount" @submit="saveRecord"/>
     <Types :value.sync="record.type"/>
-    <Notes @update:value="onUpdateNotes"/>
+    <Notes field-name="备注"
+           placeholder="在这里输入备注"
+           @update:value="onUpdateNotes"/>
     <Tags :data-source.sync="tags" @update:value="onUpdateTags"/>
   </Layout>
 </template>
@@ -36,7 +38,7 @@ import tagListModel from '@/models/tagListModel';
 // }
 // window.localStorage.setItem('version', '0.0.2');
 const recordList: RecordItem[] = recordListModel.fetch();
-const tagList=tagListModel.fetch();
+const tagList = tagListModel.fetch();
 
 @Component({
   components: {Tags, Notes, Types, NumberPad},
